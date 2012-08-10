@@ -1,0 +1,39 @@
+#                                                                        #
+# Settings Configuration for the Payment.Atos package                    #
+#                                                                        #
+
+Payment:
+  Atos:
+    Config:
+      Merchant:
+        Id: 
+          Production: '052801240400018'
+          Development: '014022286611111'
+        Country: 'fr'
+      CurrencyCode: 978
+      Uri:
+        Response:
+          Package: 'Misma.Store'
+          ControllerName: 'Payment'
+          ActionName: 'response'
+        AutoResponse:
+          Package: 'Misma.Store'
+          ControllerName: 'Payment'
+          ActionName: 'autoResponse'
+        Cancel:
+          Package: 'Misma.Store'
+          ControllerName: 'Payment'
+          ActionName: 'cancel'
+      SplitPayment:
+        Amount: 299
+        NbDays: 30        
+    Log:
+      PaymentLogger:
+        backend: TYPO3\FLOW3\Log\Backend\FileBackend
+        backendOptions:
+           logFileURL: %FLOW3_PATH_DATA%Logs/Payment_Atos.log
+           createParentDirectories: TRUE
+           severityThreshold: %LOG_INFO%
+           maximumLogFileSize: 10485760
+           logFilesToKeep: 1
+           logMessageOrigin: FALSE
