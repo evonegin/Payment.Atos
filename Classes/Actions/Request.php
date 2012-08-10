@@ -180,28 +180,27 @@ class Request extends \Payment\Atos\Actions\AbstractAction {
 	/**
 	 * Set caddie
 	 *
-	 * @return void
+	 * @param string $orderId
 	 */
 	public function setCaddie($caddie) {
-		return $this->caddie = $caddie;
+		$this->caddie = $caddie;
 	}
 	
 	/**
 	 * Set order id
 	 *
-	 * @return void
+	 * @param int $orderId
 	 */
 	public function setOrderId($orderId) {
-		return $this->orderId = $orderId;
+		$this->orderId = $orderId;
 	}
 	
 	/**
 	 * Set split payment
-	 *
-	 * @return void
+     * @param boolean $splitPayment
 	 */
 	public function setSplitPayment($splitPayment) {
-		return $this->splitPayment = $splitPayment;
+		$this->splitPayment = $splitPayment;
 	}
 	
 }
